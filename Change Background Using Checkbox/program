@@ -38,7 +38,7 @@ public class checkbox implements ItemListener
    }
    checkbox()
    {
-	    o=new Frame("Feedback Form");
+	    o=new Frame("Background Changer");
          o.setVisible(true);
          o.setSize(800,600);		 
          o.addWindowListener(new WindowAdapter(){
