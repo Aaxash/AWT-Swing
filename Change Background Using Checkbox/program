@@ -1,0 +1,83 @@
+import java.awt.*;
+import java.awt.Color;
+import java.awt.event.*;
+
+public class checkbox implements ItemListener
+{       Frame o;
+        Font f;
+		Label l3;
+		CheckboxGroup g1;
+		Checkbox c1;
+		Checkbox c2;
+		Checkbox c3;
+   	public void itemStateChanged(ItemEvent ie){
+		Object obj=ie.getSource();
+       Checkbox t=(Checkbox)obj;		
+	    if(t==c1){
+		  o.setBackground(Color.RED);
+          c1.setBackground(Color.RED);
+           c2.setBackground(Color.RED);
+         c3.setBackground(Color.RED);	
+         l3.setBackground(Color.RED);		 
+	    }else
+			if(t==c2){
+		  o.setBackground(Color.BLUE);
+          c1.setBackground(Color.BLUE);
+           c2.setBackground(Color.BLUE);
+         c3.setBackground(Color.BLUE);	
+           l3.setBackground(Color.BLUE);		 
+	    }
+		else
+			if(t==c3){
+		  o.setBackground(Color.GREEN);
+          c1.setBackground(Color.GREEN);
+           c2.setBackground(Color.GREEN);
+         c3.setBackground(Color.GREEN);	
+          l3.setBackground(Color.GREEN);		 
+	    }
+   }
+   checkbox()
+   {
+	    o=new Frame("Feedback Form");
+         o.setVisible(true);
+         o.setSize(800,600);		 
+         o.addWindowListener(new WindowAdapter(){
+		public void windowClosing(WindowEvent e){
+		System.exit(0);
+			} 		 
+		 });
+		o.setLayout(null); 
+		f=new Font("Times New Roman",Font.ITALIC,18);
+		
+		l3=new Label("Select Background",Label.LEFT); 
+		l3.setVisible(true);
+		l3.setBounds(200,205,180,40);
+		l3.setFont(f);
+		
+	    g1=new CheckboxGroup();
+		c1=new Checkbox("RED",g1,false);
+		c2=new Checkbox("BLUE",g1,false);
+	    c3=new Checkbox("GREEN",g1,false);
+		c1.setBounds(380,210,100,30);
+		c2.setBounds(380,260,100,30);
+		c3.setBounds(380,310,100,30);
+		c1.setFont(f);
+		c2.setFont(f);
+		c3.setFont(f);
+		c1.addItemListener(this);
+		c2.addItemListener(this);
+		c3.addItemListener(this);
+	   
+		o.add(l3);
+		o.add(c1);
+		o.add(c2);
+		o.add(c3);
+		
+	
+	
+}
+    public static void main(String[] args)
+    {
+      new checkbox();	
+	}
+}
