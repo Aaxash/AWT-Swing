@@ -34,9 +34,11 @@ public class Temperature extends javax.swing.JFrame {
         });
 
         jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 28)); // NOI18N
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jTextField2.setFont(new java.awt.Font("Times New Roman", 0, 28)); // NOI18N
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
@@ -91,7 +93,7 @@ public class Temperature extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -241,3 +243,4 @@ public class Temperature extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     // End of variables declaration                   
 }
+
