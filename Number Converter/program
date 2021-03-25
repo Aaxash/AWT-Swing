@@ -81,10 +81,11 @@ public class Converter extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(71, 71, 71)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -139,36 +140,39 @@ public class Converter extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
     
     }                                           
-    public void convert(){
+    public void convert(Integer temp,Double t){
+    //System.out.println(temp);
+   // System.out.println(t);
     switch(s)
     {
-    
-        case 0:Integer d=Integer.parseInt(jTextField1.getText());
-               String result=Integer.toBinaryString(d);
+       case 0: String result=Integer.toBinaryString(temp);
                jTextField2.setText(result);
                break;
-        case 1:Integer i=Integer.parseInt(jTextField1.getText());
-               String r=Integer.toOctalString(i);
+        case 1:String r=Integer.toOctalString(temp);
                jTextField2.setText(r);
                break;
-        case 2:Integer in=Integer.parseInt(jTextField1.getText());
-               String re=Integer.toHexString(in);
+        case 2:String re=Integer.toHexString(temp);
                jTextField2.setText(re);
                break;
-    }
+    }    
+
     }
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
       int i=jComboBox1.getSelectedIndex();
       switch(i){
-          case 0:jLabel3.setText("Decimal");jLabel4.setText("Binary");s=0;break;
-          case 1:jLabel3.setText("Decimal");jLabel4.setText("Octal");s=1;break;
-           case 2:jLabel3.setText("Decimal");jLabel4.setText("Hexa");s=2;break;
+          case 0:jLabel3.setText("Decimal");jLabel4.setText("Binary");s=0;valid();break;
+          case 1:jLabel3.setText("Decimal");jLabel4.setText("Octal");s=1;valid();break;
+           case 2:jLabel3.setText("Decimal");jLabel4.setText("Hexa");s=2;valid();break;
       }
     }                                          
-
+   public void valid(){
+   Double b=Double.valueOf(jTextField1.getText());
+   int t = (int) Math.round(b);
+   convert(t,b);
+   }
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-        convert();
+     valid();
+        
     }                                        
 
     public static void main(String args[]) {
